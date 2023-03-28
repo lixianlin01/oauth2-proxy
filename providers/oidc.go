@@ -97,7 +97,7 @@ func (p *OIDCProvider) enrichFromProfileURL(ctx context.Context, s *sessions.Ses
 		WithContext(ctx).
 		WithHeaders(makeOIDCHeader(s.AccessToken)).
 		Do().
-		UnmarshalJSON()
+		UnmarshalSimpleJSON()
 	if err != nil {
 		return err
 	}

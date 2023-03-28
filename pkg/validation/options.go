@@ -75,7 +75,7 @@ func Validate(o *options.Options) error {
 			body, err := requests.New(requestURL).
 				WithContext(ctx).
 				Do().
-				UnmarshalJSON()
+				UnmarshalSimpleJSON()
 			if err != nil {
 				logger.Errorf("error: failed to discover OIDC configuration: %v", err)
 			} else {

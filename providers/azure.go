@@ -349,7 +349,7 @@ func (p *AzureProvider) getEmailFromProfileAPI(ctx context.Context, accessToken 
 		WithContext(ctx).
 		WithHeaders(makeAzureHeader(accessToken)).
 		Do().
-		UnmarshalJSON()
+		UnmarshalSimpleJSON()
 	if err != nil {
 		return "", err
 	}

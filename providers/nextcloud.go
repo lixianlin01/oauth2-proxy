@@ -29,7 +29,7 @@ func (p *NextcloudProvider) GetEmailAddress(ctx context.Context, s *sessions.Ses
 		WithContext(ctx).
 		WithHeaders(makeOIDCHeader(s.AccessToken)).
 		Do().
-		UnmarshalJSON()
+		UnmarshalSimpleJSON()
 	if err != nil {
 		return "", fmt.Errorf("error making request: %v", err)
 	}

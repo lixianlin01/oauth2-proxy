@@ -70,7 +70,7 @@ func (p *DigitalOceanProvider) GetEmailAddress(ctx context.Context, s *sessions.
 		WithContext(ctx).
 		WithHeaders(makeOIDCHeader(s.AccessToken)).
 		Do().
-		UnmarshalJSON()
+		UnmarshalSimpleJSON()
 	if err != nil {
 		return "", err
 	}
